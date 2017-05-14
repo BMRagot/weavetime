@@ -5,9 +5,6 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { EmailValidator } from '../../validators/email';
 import firebase from 'firebase';
 
-
-
-
 import { HomePage } from '../home/home';
 import { TabsPage } from '../tabs/tabs';
 import { SignupPage } from '../signup/signup';
@@ -73,21 +70,25 @@ export class LoginPage {
 
          })
         }else{
-        let currentuser =   firebase.database().ref('/userProfile').child(response.auth.uid)
-console.log("kjlkjlkjkjlnnl"+currentuser);
-
+          firebase.database().ref('/userProfile').child(response.auth.uid).once("value")
+  .then(function(snapshot) {
+    let currentuser = snapshot;
+console.log(JSON.stringify(currentuser));
+window.localStorage.setItem('currentuser', JSON.stringify(currentuser));
+})
           // let currentuser = {
           //   email: response.auth.email,
           //   picture: response.auth.photoURL
           // };
 
-          window.localStorage.setItem('currentuser', JSON.stringify(currentuser));
+
           //this.navCtrl.pop();
         //  this.navCtrl.push(TabsPage);
 
           this.loading.dismiss().then( () => {
             this.navCtrl.setRoot(TabsPage);
-          });
+          })
+
         }
       }).catch((error) => {
         console.log(error);

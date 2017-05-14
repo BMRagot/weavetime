@@ -11,8 +11,10 @@
   <ion-grid>
     <ion-row center>
       <ion-col col-12>
-          <img class="user-image" src="{{avatar}}">
-
+          <img class="user-image" src="{{user.avatar}}">
+          <h3>{{user.surname}} {{user.name}}</h3>
+          <p><p>
+          <p><a href="mailto:{{user.email}}">{{user.email}}</a></p>
 
       </ion-col>
     </ion-row>
@@ -20,7 +22,9 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col>This column will take 12 columns</ion-col>
+      <ion-col>
+        <img src="img/wt bleu.png">
+      </ion-col>
       <ion-col>This column will take 6 columns</ion-col>
     </ion-row>
   </ion-grid>
