@@ -13,19 +13,33 @@
       <ion-col col-12>
           <img class="user-image" src="{{user.avatar}}">
           <h3>{{user.surname}} {{user.name}}</h3>
-          <p>{{user.role}}<p>
-          <p><a href="mailto:{{user.email}}">{{user.email}}</a></p>
-          <p>{{user.phonenumber}}<p>
+          <span>{{user.role}}</span>
+          <span><a href="mailto:{{user.email}}">{{user.email}}</a></span>
+          <span>{{user.phonenumber}}</span>
       </ion-col>
     </ion-row>
-  </ion-grid>
+  <!-- </ion-grid>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <img src="img/wt bleu.png">
+  <ion-grid> -->
+    <ion-row class="action">
+      <ion-col col-6>
+        <img src="assets/img/wt blue.png">
+        <h4 >+ {{account.wttogive}}</h4>
+        <span>à donner pour récompenser un weaver</span>
+        <button ion-button icon-right>
+          Je donne mes WT
+          <ion-icon name="arrow-dropright"></ion-icon>
+        </button>
       </ion-col>
-      <ion-col>This column will take 6 columns</ion-col>
+      <ion-col col-6>
+        <img src="assets/img/wt yellow.png">
+        <h4>+{{account.wttoconvert}}</h4>
+        <span>pour explorer des territoires augmentés</span>
+          <button ion-button icon-right (click)="goToExplore()">
+            Je dépense mes WT
+            <ion-icon name="arrow-dropright"></ion-icon>
+          </button>
+      </ion-col>
     </ion-row>
   </ion-grid>
 

@@ -1,14 +1,35 @@
 page-about {
     .user-image
     {
-      width: 46vw;
+      width: 40vw;
       border-radius: 50%;
       border:none;
       margin-left: auto;
-    margin-right: auto;
-    display: block;
-
-
+      margin-right: auto;
+      display: block;
     }
-
+    h3{
+      text-align: center;
+    }
+    span{
+      display: block;
+      text-align: center;
+    }
+    a{
+      text-decoration: none;
+    }
+    .action{
+      padding-top:1.2em;
+      text-align: center;
+      img{
+        width: 28vw;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+      button {
+        width: 90%;
+        font-size: 1.2rem;
+      }
+    }
 }

@@ -71,11 +71,12 @@ export class LoginPage {
          })
         }else{
           firebase.database().ref('/userProfile').child(response.auth.uid).once("value")
-  .then(function(snapshot) {
-    let currentuser = snapshot;
-console.log(JSON.stringify(currentuser));
-window.localStorage.setItem('currentuser', JSON.stringify(currentuser));
-})
+            .then(function(snapshot) {
+              let currentuser = JSON.parse(JSON.stringify(snapshot))//.toString()
+              currentuser.uid=response.auth.uid;
+              console.log(JSON.stringify(currentuser));
+              window.localStorage.setItem('currentuser', JSON.stringify(currentuser));
+            })
           // let currentuser = {
           //   email: response.auth.email,
           //   picture: response.auth.photoURL
