@@ -21,19 +21,19 @@ export class TabsPage {
 //  ionViewDidEnter() {
 //    this.tabRef.select(2);
 //   }
-constructor (){}
+//constructor (){}
 
-//  constructor(public navCtrl: NavController) {
-//    window.localStorage.removeItem('currentuser');
-//    if (!this.isLoggedin()) {
-//      console.log('You are not logged in');
-//      this.navCtrl.push(LoginPage);
-//    }
-//  }
+ constructor(public navCtrl: NavController) {
+   //window.localStorage.removeItem('currentuser');
+   if (!this.isLoggedin()) {
+     console.log('You are not logged in');
+     this.navCtrl.push(LoginPage);
+   }
+ }
 
-//  isLoggedin() {
-//    if (window.localStorage.getItem('currentuser')) {
-//      return true;
-//    }
-//  }
+ isLoggedin() {
+   if (window.localStorage.getItem('currentuser')) {
+     return true;
+   }
+ }
 }

@@ -1,12 +1,17 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from 'angularfire2';
 import { MyApp } from './app.component';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { SignupPage } from '../pages/signup/signup';
 
 
   // Initialize Firebase
@@ -24,11 +29,15 @@ import { AboutPage } from '../pages/about/about';
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
     HomePage,
     TabsPage,
-    LoginPage
+    SignupPage,
+    AboutPage,
+    ContactPage
   ],
   imports: [
+    BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(config)
   ],
@@ -37,8 +46,14 @@ import { AboutPage } from '../pages/about/about';
     MyApp,
     HomePage,
     TabsPage,
-    LoginPage
+    LoginPage,
+    SignupPage,
+    AboutPage,
+    ContactPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    StatusBar,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
