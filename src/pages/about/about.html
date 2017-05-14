@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding scroll="false">
 
   <ion-grid>
     <ion-row center>
@@ -22,7 +22,7 @@
 
   <ion-grid> -->
     <ion-row class="action">
-      <ion-col col-6>
+      <ion-col col-6 class="give">
         <img src="assets/img/wt blue.png">
         <h4 >+ {{account.wttogive}}</h4>
         <span>à donner pour récompenser un weaver</span>
@@ -31,7 +31,7 @@
           <ion-icon name="arrow-dropright"></ion-icon>
         </button>
       </ion-col>
-      <ion-col col-6>
+      <ion-col col-6 class="explore">
         <img src="assets/img/wt yellow.png">
         <h4>+{{account.wttoconvert}}</h4>
         <span>pour explorer des territoires augmentés</span>

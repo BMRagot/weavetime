@@ -1,7 +1,7 @@
 page-about {
     .user-image
     {
-      width: 40vw;
+      width: 35vw;
       border-radius: 50%;
       border:none;
       margin-left: auto;
@@ -10,6 +10,7 @@ page-about {
     }
     h3{
       text-align: center;
+      text-transform: capitalize;
     }
     span{
       display: block;
@@ -19,7 +20,7 @@ page-about {
       text-decoration: none;
     }
     .action{
-      padding-top:1.2em;
+      padding-top:2.2em;
       text-align: center;
       img{
         width: 28vw;
@@ -28,8 +29,26 @@ page-about {
         display: block;
       }
       button {
+        margin-top: 1.2em;
         width: 90%;
         font-size: 1.2rem;
       }
+      .give button{
+        background-color :#124974 !important;
+      }
+      .explore button{
+       background-color : #F2C355 !important;
+      }
+      .give {color :#124974 }
+      .explore {color : #F2C355 }
+      h4 {
+        font-weight: bold
+      }
     }
+
+
+}
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+display: none;
 }

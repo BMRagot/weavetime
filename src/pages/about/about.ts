@@ -73,10 +73,11 @@ ionViewWillEnter(){
     })
   }
   setWtAccount(data){
-    this.account =data;
+    this.account = data;
   }
   goToExplore(){
     this.navCtrl.push(ContactPage);
+    
   }
 
 }
